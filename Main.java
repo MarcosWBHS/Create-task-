@@ -7,10 +7,10 @@ class Main {
     // Initalizes the scanner inputs and welcomes the user
     Scanner inputInt = new Scanner(System.in);
     Scanner inputString = new Scanner(System.in);
-    System.out.println("Welcome to the Gradebook app.");
-    System.out.println("This is a program that will let you input the grades of your class.");
-    System.out.println("Along with that, some commands are included that will let you filter through the class.");
-    System.out.println("Such as methods to see the mean, median, and range.");
+    System.out.println("\033[31;1;4mWelcome to the Gradebook app.\033[0m");
+    System.out.println("This is a program that will let you \u001B[32minput the grades\u001B[0m of your class.");
+    System.out.println("Along with that, some \u001B[36mcommands are included\u001B[0m that will let you filter through the class.");
+    System.out.println("Such as methods to see the \u001B[33mmean, median, and range\u001B[0m.");
 
     // Asks the user for the name of the class they are putting grades for
     System.out.println("\nClass name: ");  
