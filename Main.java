@@ -28,19 +28,45 @@ class Main {
     System.out.println("\nName: ");
     String teacherName = inputString.nextLine();
 
+    // Lets the user know that they can now enter grades and names of the class
     System.out.println("\n" + className + ", " + classSize + " Students, " + prefix + " " + teacherName);
     System.out.println("You can now input student names and grades");
-
+    
+    // Creates parallel Lists that store the student's names and grades
     ArrayList<String> studentList = new ArrayList<String>();
     ArrayList<Integer> gradeList = new ArrayList<Integer>();
     
     boolean canSubmitGrades = true;
+    int count = 0;
     while(canSubmitGrades)
     {
       System.out.println("Enter Student Name");
       String studentName = inputString.nextLine();
-      System.out.println("Enter ");
+      System.out.println("Enter " + studentName + "'s grade'");
+      int studentGrade = inputInt.nextInt();
+      count ++;
+
+      studentList.add(studentName);
+      gradeList.add(studentGrade);
+      
+      if(count == classSize)
+      {
+        System.out.println("You have entered the entire class");
+        System.out.println("This is what you entered:");
+        for(String printStudent : studentList)
+          {
+            System.out.print(printStudent + ", ");
+          }
+        System.out.println("");
+        for(int printGrade : gradeList)
+          {
+            System.out.print(printGrade + ", ");
+          }
+        System.out.println("");
+        canSubmitGrades = false;
+      }
     }
+    Commands.getGrade(gradeList);
     
     inputInt.close();
     inputString.close();
