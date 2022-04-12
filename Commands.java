@@ -7,19 +7,19 @@ public class Commands
   private static String green = "\u001B[32m";
   private static String end = "\u001B[0m";
   
-  public static void getStudents(ArrayList<String> list)
+  public static void getStudents(ArrayList<String> studentList)
   {
     System.out.println();
-    for(String printStudent : list)
+    for(String printStudent : studentList)
     {
       System.out.print(printStudent + ", ");
     }
   }
 
-  public static void getGrade(ArrayList<Integer> list)
+  public static void getGrade(ArrayList<Integer> gradelist)
   {
     System.out.println("\nGrades of the class: ");
-    for(int printGrade : list)
+    for(int printGrade : gradelist)
     {
       if(printGrade > 79)
       {
@@ -35,30 +35,30 @@ public class Commands
       }
     }
   }
-  public static double getMean(ArrayList<Integer> list)
+  public static double getMean(ArrayList<Integer> gradelist)
   {
     double temp = 0.0;
-    for(int i = 0; i < list.size(); i++)
+    for(int i = 0; i < gradelist.size(); i++)
       {
-        temp = list.get(i) + temp;
+        temp = gradelist.get(i) + temp;
       }
-    return (double) temp/list.size();
+    return (double) temp/gradelist.size();
   }
-  public static void getMedian(ArrayList<Integer> list)
+  public static void getMedian(ArrayList<Integer> gradelist)
   {
-    Collections.sort(list);
-    if(list.size()%2==0)
+    Collections.sort(gradelist);
+    if(gradelist.size()%2==0)
     {
-      System.out.println((list.get((list.size()/2)) + list.get((list.size()/2)-1))/2);
+      System.out.println((gradelist.get((gradelist.size()/2)) + gradelist.get((gradelist.size()/2)-1))/2);
     }
-    if(!(list.size()%2==0))
+    if(!(gradelist.size()%2==0))
     {
-      System.out.println(list.get((list.size()/2)));
+      System.out.println(gradelist.get((gradelist.size()/2)));
     }
   }
-  public static void getRange(ArrayList<Integer> list)
+  public static void getRange(ArrayList<Integer> gradelist)
   {
-    Collections.sort(list);
-    System.out.println(list.get(0) + " - " + list.get(list.size()-1));
+    Collections.sort(gradelist);
+    System.out.println(gradelist.get(0) + " - " + gradelist.getgradelist.size()-1));
   }
 }
